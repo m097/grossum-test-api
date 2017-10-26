@@ -7,6 +7,8 @@ imports:
 # https://symfony.com/doc/current/best_practices/configuration.html#application-related-configuration
 parameters:
     locale: en
+    nasa_api_url: 'https://api.nasa.gov'
+    nasa_api_key: 'N7LkblDsc5aen05FJqBQ8wU4qSdmsftwJagVK7UD'
 
 framework:
     #esi: ~
