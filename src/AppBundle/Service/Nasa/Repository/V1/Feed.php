@@ -21,7 +21,7 @@ class Feed extends AbstractRepository
         $now = new \DateTime('now');
 
         return $this->request()->feed([
-           'start_date' => (new \DateTime('now'))->sub(new \DateInterval('P'.$days.'D'))->format($format),
+           'start_date' => (new \DateTime('now'))->sub(new \DateInterval('P'.($days - 1).'D'))->format($format),
            'end_date' => (new \DateTime('now'))->format($format),
            'detailed' => false,
        ]);

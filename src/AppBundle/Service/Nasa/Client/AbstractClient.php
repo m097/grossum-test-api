@@ -47,7 +47,7 @@ abstract class AbstractClient
         return '/neo/rest/'.$this->version.$url;
     }
 
-    protected function getResponse(Response $res)
+    protected function getResponse(Response $res) : ApiResponse
     {
         return new ApiResponse($res->getStatusCode(), $res->getBody());
     }
