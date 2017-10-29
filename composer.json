@@ -37,7 +37,9 @@
     },
     "require-dev": {
         "sensio/generator-bundle": "^3.0",
-        "symfony/phpunit-bridge": "^3.0"
+        "symfony/phpunit-bridge": "^3.0",
+        "phpunit/phpunit": "^6.0",
+        "doctrine/doctrine-fixtures-bundle": "^2.3"
     },
     "provide": {
         "ext-mongo": "1.6.14"
