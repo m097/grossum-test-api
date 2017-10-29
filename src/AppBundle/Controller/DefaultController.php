@@ -2,6 +2,7 @@
 
 namespace AppBundle\Controller;
 
+use CoreBundle\Controller\RestController;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 
 class DefaultController extends RestController

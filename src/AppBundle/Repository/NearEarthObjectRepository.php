@@ -4,7 +4,10 @@ namespace AppBundle\Repository;
 
 use AppBundle\Document\NearEarthObject;
 use AppBundle\Tool\Helper\ObjectHelper;
+use Doctrine\ODM\MongoDB\Cursor;
 use Doctrine\ODM\MongoDB\DocumentRepository;
+use Symfony\Component\HttpFoundation\Request;
+use Doctrine\ODM\MongoDB\Query\Builder;
 
 class NearEarthObjectRepository extends DocumentRepository
 {
@@ -75,5 +78,25 @@ class NearEarthObjectRepository extends DocumentRepository
             $dm->remove($feed);
         }
         $dm->flush();
+    }
+
+    public function getHazardousQueryBuilder() : Builder
+    {
+        return $this->createQueryBuilder()
+            ->field('isHazardous')->equals(true)
+            ->sort('id', 'ASC');
+    }
+
+    public function getFastest(Request $request) : Cursor
+    {
+        $count = (int)$request->query->get('count', 5);
+        $count = $count > 10 ? 10 : $count;
+
+        return $this->createQueryBuilder()
+            ->field('isHazardous')->equals($request->query->get('hazardous', false) === 'true')
+            ->sort('speed', 'DESC')
+            ->limit($count)
+            ->getQuery()
+            ->execute();
     }
 }

@@ -1,9 +1,10 @@
 <?php
 
-namespace AppBundle\Controller;
+namespace CoreBundle\Controller;
 
 use FOS\RestBundle\Context\Context;
 use FOS\RestBundle\Controller\FOSRestController;
+
 
 abstract class RestController extends FOSRestController
 {

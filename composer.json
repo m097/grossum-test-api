@@ -3,9 +3,7 @@
     "license": "proprietary",
     "type": "project",
     "autoload": {
-        "psr-4": {
-            "AppBundle\\": "src/AppBundle"
-        },
+        "psr-4": { "": "src/" },
         "classmap": [
             "app/AppKernel.php",
             "app/AppCache.php"
@@ -28,6 +26,7 @@
         "friendsofsymfony/rest-bundle": "^2.2",
         "guzzlehttp/guzzle": "^6.3",
         "incenteev/composer-parameter-handler": "^2.0",
+        "pagerfanta/pagerfanta": "^1.0",
         "sensio/distribution-bundle": "^5.0.19",
         "sensio/framework-extra-bundle": "^3.0.2",
         "symfony/monolog-bundle": "^3.1.0",

@@ -19,6 +19,7 @@ class AppKernel extends Kernel
             new FOS\RestBundle\FOSRestBundle(),
             new Doctrine\Bundle\MongoDBBundle\DoctrineMongoDBBundle(),
 
+            new CoreBundle\CoreBundle(),
             new AppBundle\AppBundle(),
         ];
 

@@ -1,0 +1,8 @@
+services:
+    pagination_factory:
+        class: CoreBundle\Service\Pagination\PaginationFactory
+
+    api_pagination_normalizer:
+        class: CoreBundle\Service\Pagination\PaginationNormalizer
+        public: false
+        tags: [serializer.normalizer]
