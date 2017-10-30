@@ -2,6 +2,7 @@
 
 namespace CoreBundle\Controller;
 
+use Doctrine\ODM\MongoDB\Cursor;
 use FOS\RestBundle\Context\Context;
 use FOS\RestBundle\Controller\FOSRestController;
 
@@ -21,5 +22,10 @@ abstract class RestController extends FOSRestController
              ->setContext($restContext);
 
         return $this->handleView($view);
+    }
+
+    protected function prepareRepositoryItems(Cursor $items)
+    {
+        return array_values($items->toArray());
     }
 }

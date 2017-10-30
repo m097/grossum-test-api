@@ -3,12 +3,18 @@
 namespace AppBundle\Controller;
 
 use CoreBundle\Controller\RestController;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+use FOS\RestBundle\Controller\Annotations\Get;
+use Nelmio\ApiDocBundle\Annotation\ApiDoc;
 
 class DefaultController extends RestController
 {
     /**
-     * @Route("/", name="homepage")
+     * @ApiDoc(
+     *  section="Index",
+     *  resource=false,
+     *  description="Index page"
+     * )
+     * @Get("/", name="homepage")
      */
     public function indexAction()
     {

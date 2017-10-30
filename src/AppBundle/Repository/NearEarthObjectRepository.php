@@ -93,7 +93,7 @@ class NearEarthObjectRepository extends DocumentRepository
         $count = $count > 10 ? 10 : $count;
 
         return $this->createQueryBuilder()
-            ->field('isHazardous')->equals($request->query->get('hazardous', false) === 'true')
+            ->field('isHazardous')->equals($request->query->get('hazardous', 'false') === 'true')
             ->sort('speed', 'DESC')
             ->limit($count)
             ->getQuery()

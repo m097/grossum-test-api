@@ -18,6 +18,8 @@ class AppKernel extends Kernel
 
             new FOS\RestBundle\FOSRestBundle(),
             new Doctrine\Bundle\MongoDBBundle\DoctrineMongoDBBundle(),
+            new Nelmio\CorsBundle\NelmioCorsBundle(),
+            new Nelmio\ApiDocBundle\NelmioApiDocBundle(),
 
             new CoreBundle\CoreBundle(),
             new AppBundle\AppBundle(),
